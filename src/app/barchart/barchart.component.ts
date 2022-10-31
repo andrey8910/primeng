@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { HttpClientService } from'../services/http-client.service';
 
 @Component({
@@ -7,16 +7,18 @@ import { HttpClientService } from'../services/http-client.service';
   styleUrls: ['./barchart.component.css']
 })
 export class BarchartComponent implements OnInit {
+  @Input('colorPicker') colorPicker: any
   basicData: {
     labels: string[],
     datasets: {
       label: string,
-      color: string,
+      backgroundColor: string,
       data:  string[]
     }[]
   };
   basicOptions: any;
   loading = false;
+  color = '#1976D2'
 
   public peoples : any[];
   public peopleName: string[] = [];
@@ -45,10 +47,24 @@ export class BarchartComponent implements OnInit {
       datasets: [
          {
            label: 'height',
-           color: '#FFA726',
+           backgroundColor: this.color,
            data: this.peopleHeight
          }
       ]
     };
   }
+  changeColor() {
+     this.basicData = {
+       labels: this.peopleName,
+       datasets: [
+         {
+           label: 'height',
+           backgroundColor: this.color,
+           data: this.peopleHeight
+         }
+       ]
+     };
+
+  }
+
 }
