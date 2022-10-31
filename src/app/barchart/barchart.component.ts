@@ -16,6 +16,7 @@ export class BarchartComponent implements OnInit {
     }[]
   };
   basicOptions: any;
+  loading = false;
 
   public peoples : any[];
   public peopleName: string[] = [];
@@ -29,6 +30,7 @@ export class BarchartComponent implements OnInit {
     this.httpClientService.getData().subscribe( (data: any) => {
       this.peoples = data.results;
       this.showPeoples()
+      this.loading = true;
     })
   }
 
@@ -41,12 +43,12 @@ export class BarchartComponent implements OnInit {
     this.basicData = {
       labels: this.peopleName,
       datasets: [
-             {
-               label: 'height',
-               color: '#FFA726',
-               data: this.peopleHeight
-             }
-           ]
-         };
+         {
+           label: 'height',
+           color: '#FFA726',
+           data: this.peopleHeight
+         }
+      ]
+    };
   }
 }

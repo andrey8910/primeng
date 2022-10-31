@@ -3,3 +3,8 @@
   width: 80%;
 
 }
+p-progressSpinner{
+  position: absolute;
+  left: 46%;
+  top: 46%
+}
