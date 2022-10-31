@@ -1,3 +1,4 @@
+@import "~primeng/resources/primeng.min.css";
 .content-section{
   padding: 20px;
   width: 80%;
@@ -8,3 +9,4 @@ p-progressSpinner{
   left: 46%;
   top: 46%
 }
+

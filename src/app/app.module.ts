@@ -9,6 +9,7 @@ import { HttpClientService } from './services/http-client.service';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ColorPickerModule } from "primeng/colorpicker";
+import {ToastModule} from 'primeng/toast';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ColorPickerModule } from "primeng/colorpicker";
     HttpClientModule,
     BrowserAnimationsModule,
     ProgressSpinnerModule,
-    ColorPickerModule
+    ColorPickerModule,
+    ToastModule
   ],
   providers: [HttpClientService],
   bootstrap: [AppComponent]

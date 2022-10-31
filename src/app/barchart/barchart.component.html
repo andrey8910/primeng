@@ -4,10 +4,11 @@
     <h5 >swapi.dev/</h5>
     <span>change color : </span>
 
-    <p-colorPicker (click)="changeColor()"  [(ngModel)]="color"  [showTransitionOptions]="'.2s linear'" [hideTransitionOptions]="'.2s linear'"></p-colorPicker>
+    <p-colorPicker #colorP (click)="changeColor(colorP)"  [(ngModel)]="color"  [showTransitionOptions]="'.2s linear'" [hideTransitionOptions]="'.2s linear'"></p-colorPicker>
 
     <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
   </div>
 </div>
 
 <p-progressSpinner *ngIf="!loading"></p-progressSpinner>
+<p-toast position="top-right" [showTransitionOptions]="'.2s linear'" [hideTransitionOptions]="'.2s linear'"></p-toast>
