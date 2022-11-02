@@ -26,7 +26,8 @@ import {ToastModule} from 'primeng/toast';
     BrowserAnimationsModule,
     ProgressSpinnerModule,
     ColorPickerModule,
-    ToastModule
+    ToastModule,
+
   ],
   providers: [HttpClientService],
   bootstrap: [AppComponent]

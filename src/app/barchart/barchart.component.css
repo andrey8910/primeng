@@ -1,4 +1,4 @@
-@import "~primeng/resources/primeng.min.css";
+
 .content-section{
   padding: 20px;
   width: 80%;
@@ -10,3 +10,12 @@ p-progressSpinner{
   top: 46%
 }
 
+.toast-message{
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid forestgreen;
+  border-radius: 10px;
+  box-shadow: 6px 1px  lightgreen;
+}

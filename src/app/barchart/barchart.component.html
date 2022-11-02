@@ -3,12 +3,18 @@
   <div class="card">
     <h5 >swapi.dev/</h5>
     <span>change color : </span>
-
     <p-colorPicker #colorP (click)="changeColor(colorP)"  [(ngModel)]="color"  [showTransitionOptions]="'.2s linear'" [hideTransitionOptions]="'.2s linear'"></p-colorPicker>
-
     <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
   </div>
 </div>
 
 <p-progressSpinner *ngIf="!loading"></p-progressSpinner>
-<p-toast position="top-right" [showTransitionOptions]="'.2s linear'" [hideTransitionOptions]="'.2s linear'"></p-toast>
+<p-toast position="top-right" [showTransitionOptions]="'.2s linear'" [hideTransitionOptions]="'.2s linear'">
+  <ng-template let-message pTemplate="message">
+      <div class = "toast-message">
+        <i class="pi pi-info-circle" style="font-size: 1rem"></i>
+        <span>Selected color : {{color}}</span>
+        <span>previous color : {{previousColor}}</span>
+      </div>
+  </ng-template>
+</p-toast>

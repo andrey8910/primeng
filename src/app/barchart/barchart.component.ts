@@ -20,7 +20,8 @@ export class BarchartComponent implements OnInit {
   };
   basicOptions: any;
   loading = false;
-  color = '#1976d2'
+  color = '#1976d2';
+  previousColor: string | null = ''
 
   public peoples : any[];
   public peopleName: string[] = [];
@@ -38,15 +39,17 @@ export class BarchartComponent implements OnInit {
       this.peoples = data.results;
       this.showPeoples()
       this.loading = true;
+
+      this.peoples.forEach((person: any) => {
+        this.peopleName.push(person.name);
+        this.peopleHeight.push(person.height)
+      })
+
     })
+    localStorage.setItem('previousColor', this.color)
   }
 
   showPeoples(){
-    this.peoples.forEach((person: any) => {
-      this.peopleName.push(person.name);
-      this.peopleHeight.push(person.height)
-    })
-
     this.basicData = {
       labels: this.peopleName,
       datasets: [
@@ -59,6 +62,8 @@ export class BarchartComponent implements OnInit {
     };
   }
   changeColor(colorPicker: any) {
+    this.previousColor = localStorage.getItem('previousColor');
+    console.log()
     if(colorPicker.overlay !== null){
       this.basicData = {
         labels: this.peopleName,
@@ -72,10 +77,11 @@ export class BarchartComponent implements OnInit {
       };
       this.addSingle()
     }
+    localStorage.setItem('previousColor', this.color)
   }
 
   addSingle() {
-    this.messageService.add({severity:'success', summary:'Service Message', detail:'Via MessageService'});
+    this.messageService.add({});
   }
 
 }
