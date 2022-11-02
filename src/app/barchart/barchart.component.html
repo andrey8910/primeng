@@ -10,11 +10,11 @@
 
 <p-progressSpinner *ngIf="!loading"></p-progressSpinner>
 <p-toast position="top-right" [showTransitionOptions]="'.2s linear'" [hideTransitionOptions]="'.2s linear'">
-  <ng-template let-message pTemplate="message">
+  <ng-template pTemplate="message">
       <div class = "toast-message">
         <i class="pi pi-info-circle" style="font-size: 1rem"></i>
-        <span>Selected color : {{color}}</span>
-        <span>previous color : {{previousColor}}</span>
+        <span>Selected color : <i class="pi pi-circle-fill" [style.color]= "color"></i> {{color}}</span>
+        <span>previous color : <i class="pi pi-circle-fill" [style.color]= "previousColor"></i> {{previousColor}}</span>
       </div>
   </ng-template>
 </p-toast>

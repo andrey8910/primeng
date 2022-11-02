@@ -54,7 +54,7 @@ export class BarchartComponent implements OnInit {
       labels: this.peopleName,
       datasets: [
          {
-           label: 'height',
+           label: 'Height',
            backgroundColor: this.color,
            data: this.peopleHeight
          }
@@ -63,13 +63,13 @@ export class BarchartComponent implements OnInit {
   }
   changeColor(colorPicker: any) {
     this.previousColor = localStorage.getItem('previousColor');
-    console.log()
+
     if(colorPicker.overlay !== null){
       this.basicData = {
         labels: this.peopleName,
         datasets: [
           {
-            label: 'height',
+            label: 'Height',
             backgroundColor: this.color,
             data: this.peopleHeight
           }
@@ -82,6 +82,7 @@ export class BarchartComponent implements OnInit {
 
   addSingle() {
     this.messageService.add({});
+
   }
 
 }
